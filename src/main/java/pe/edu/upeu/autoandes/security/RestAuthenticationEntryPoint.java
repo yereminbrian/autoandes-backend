@@ -1,6 +1,6 @@
 package pe.edu.upeu.autoandes.security;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 import jakarta.servlet.http.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 
 @Component
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
-    private final ObjectMapper mapper;
-    public RestAuthenticationEntryPoint(ObjectMapper mapper) { this.mapper = mapper; }
+    private final JsonMapper mapper;
+    public RestAuthenticationEntryPoint(JsonMapper mapper) { this.mapper = mapper; }
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException ex) throws IOException {
         response.setStatus(HttpStatus.UNAUTHORIZED.value());

@@ -1,6 +1,6 @@
 package pe.edu.upeu.autoandes.security;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 import jakarta.servlet.http.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 
 @Component
 public class RestAccessDeniedHandler implements AccessDeniedHandler {
-    private final ObjectMapper mapper;
-    public RestAccessDeniedHandler(ObjectMapper mapper) { this.mapper = mapper; }
+    private final JsonMapper mapper;
+    public RestAccessDeniedHandler(JsonMapper mapper) { this.mapper = mapper; }
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException ex) throws IOException {
         response.setStatus(HttpStatus.FORBIDDEN.value());
