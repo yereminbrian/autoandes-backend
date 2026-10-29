@@ -64,3 +64,7 @@ Swagger UI: http://localhost:8080/swagger-ui.html.
 ## Defensa
 
 Consulta docs/guia-defensa.md para ubicar cada flujo. El examen exige explicar cada línea de código asistido por IA. Repasa y ejecuta cada parte con tu instancia Oracle antes de la defensa. No se afirma que el backend ya se haya probado contra Oracle.
+
+## Pruebas del examen
+
+La matriz de verificación manual y Postman está en [docs/plan-pruebas.md](docs/plan-pruebas.md).
