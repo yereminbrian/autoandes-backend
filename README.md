@@ -26,14 +26,14 @@ Aún falta ejecutar la migración contra tu instancia Oracle. Crear el usuario/e
 
 ## Usuarios de demostración
 
-El primer arranque cambia los marcadores de contraseña de la migración por hashes BCrypt. Para la demostración, las cuatro cuentas usan Auto2026*:
+En el primer arranque, el backend reemplaza los marcadores de las cuentas semilla por hashes BCrypt. Las claves locales siguen la regla usuario en minúsculas + 123:
 
-| Usuario | Estado | Rol |
-|---|---|---|
-| admin | Activo | ADMIN |
-| asesor | Activo | ASESOR |
-| jefe | Activo | JEFE_TALLER |
-| inactivo | Inactivo | ASESOR |
+| Usuario | Clave local | Estado | Rol |
+|---|---|---|---|
+| admin | admin123 | Activo | ADMIN |
+| asesor | asesor123 | Activo | ASESOR |
+| jefe | jefe123 | Activo | JEFE_TALLER |
+| inactivo | inactivo123 | Inactivo | ASESOR |
 
 Son credenciales únicamente para la base semilla local. Cámbialas antes de un despliegue.
 

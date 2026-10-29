@@ -15,7 +15,15 @@
     },
     {
       "key": "password",
-      "value": ""
+      "value": "admin123"
+    },
+    {
+      "key": "passwordAsesor",
+      "value": "asesor123"
+    },
+    {
+      "key": "passwordJefe",
+      "value": "jefe123"
     },
     {
       "key": "token",
@@ -92,7 +100,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"username\":\"asesor\",\"password\":\"{{password}}\"}",
+              "raw": "{\"username\":\"asesor\",\"password\":\"{{passwordAsesor}}\"}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -125,7 +133,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"username\":\"jefe\",\"password\":\"{{password}}\"}",
+              "raw": "{\"username\":\"jefe\",\"password\":\"{{passwordJefe}}\"}",
               "options": {
                 "raw": {
                   "language": "json"
