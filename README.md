@@ -10,11 +10,11 @@ Backend REST del examen práctico LP2: servicios, vehículos, clientes, órdenes
 
 ## Oracle
 
-El nombre solicitado para el esquema/usuario es AUTOANDES. Flyway crea las tablas y los datos semilla al arrancar. El URL predeterminado es jdbc:oracle:thin:@//localhost:1521/FREEPDB1; reemplázalo por el host, puerto y SERVICE_NAME que exponga tu contenedor.
+El nombre solicitado para el esquema/usuario es AUTOANDES. Flyway crea las tablas y los datos semilla al arrancar. El URL predeterminado es jdbc:oracle:thin:@//localhost:1522/FREEPDB1; reemplázalo por el host, puerto y SERVICE_NAME que exponga tu contenedor.
 
 Configura estas variables en PowerShell antes de ejecutar:
 
-$env:ORACLE_URL = "jdbc:oracle:thin:@//localhost:1521/FREEPDB1"
+$env:ORACLE_URL = "jdbc:oracle:thin:@//localhost:1522/FREEPDB1"
 $env:ORACLE_USERNAME = "AUTOANDES"
 $env:ORACLE_PASSWORD = "<contraseña configurada en Oracle>"
 $env:JWT_SECRET = "<secreto local de al menos 32 bytes>"
