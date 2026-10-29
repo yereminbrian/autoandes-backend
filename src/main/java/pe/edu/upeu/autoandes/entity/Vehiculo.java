@@ -18,7 +18,7 @@ public class Vehiculo {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
-    protected Vehiculo() {}
+    public Vehiculo() {}
     public void actualizar(String placa, String marca, String modelo, Integer anio, Cliente cliente) {
         this.placa = placa; this.marca = marca; this.modelo = modelo; this.anio = anio; this.cliente = cliente;
     }
