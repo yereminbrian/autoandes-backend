@@ -1,6 +1,9 @@
 package pe.edu.upeu.autoandes.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.NumericBooleanConverter;
+import org.hibernate.type.SqlTypes;
 import java.math.BigDecimal;
 
 @Entity
@@ -16,7 +19,9 @@ public class Servicio {
     private BigDecimal precio;
     @Column(name = "duracion_min", nullable = false)
     private Integer duracionMin;
-    @Column(nullable = false)
+    @Convert(converter = NumericBooleanConverter.class)
+    @JdbcTypeCode(SqlTypes.NUMERIC)
+    @Column(nullable = false, columnDefinition = "NUMBER(1)")
     private Boolean activo = true;
     public Servicio() {}
     public void actualizar(String codigo, String nombre, BigDecimal precio, Integer duracionMin) {

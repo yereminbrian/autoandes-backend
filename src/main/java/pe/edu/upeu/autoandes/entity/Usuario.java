@@ -1,6 +1,9 @@
 package pe.edu.upeu.autoandes.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.NumericBooleanConverter;
+import org.hibernate.type.SqlTypes;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +18,9 @@ public class Usuario {
     private String password;
     @Column(name = "nombrecompleto", nullable = false, length = 120)
     private String nombreCompleto;
-    @Column(nullable = false)
+    @Convert(converter = NumericBooleanConverter.class)
+    @JdbcTypeCode(SqlTypes.NUMERIC)
+    @Column(nullable = false, columnDefinition = "NUMBER(1)")
     private Boolean activo;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "usuario_roles", joinColumns = @JoinColumn(name = "usuarioid"),
